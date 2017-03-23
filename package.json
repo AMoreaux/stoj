@@ -1,11 +1,19 @@
 {
   "name": "stoj",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "dependencies": {
     "commander": "^2.9.0",
     "sketch2json": "^0.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AMoreaux/stoj"
+  },
+  "bugs": {
+    "url": "https://github.com/AMoreaux/stoj/issues"
+  },
+  "preferGlobal": true,
   "bin": {
     "stoj": "./app.js"
   },
