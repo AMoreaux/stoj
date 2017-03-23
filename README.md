@@ -1,4 +1,4 @@
-#stoj
+# stoj
 
 Command for parse sketch file to json.
 
