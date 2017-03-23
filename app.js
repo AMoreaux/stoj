@@ -25,8 +25,9 @@ program
 
       sketch2json(data).then(result => {
 
-        const name = (typeof options.name === 'string') ? options.name : Path.parse(path).name;
-        
+        const name = (typeof options.name === 'string') ? options.name.replace(/\.[^/.]+$/, '') : Path.parse(path).name;
+
+
         fs.writeFile(`${name}.json`, JSON.stringify(result, null, 4), (err) => {
 
           if (err) {
