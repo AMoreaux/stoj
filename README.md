@@ -1,6 +1,6 @@
 # stoj
 
-Command for parse sketch file to json.
+Command to parse sketch file to json.
 
 ```npm install stoj -g```
 
