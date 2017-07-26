@@ -3,37 +3,37 @@
 
 const program = require('commander');
 const Path = require('path');
-const fs = require('fs');
+const { writeFile, readFile } = require('fs');
+const chalk = require('chalk')
 const sketch2json = require('sketch2json');
 
 program
-  .version('0.0.1')
-  .option('-n, --name [name]', 'name of file will be generate')
-  .command('parse <path>')
+  .command('* <path>')
   .description('parse sketch file to json file')
-  .action((path, options) => {
+  .action((path) => {
 
     if(!path){
       console.log('You must defined path');
     }
 
-    fs.readFile(path, (err, data) => {
+    readFile(path, (err, data) => {
 
       if(err){
-        console.log('err',err);
+        console.log(chalk.bold.red(`❌  ${err}`));
       }
 
       sketch2json(data).then(result => {
 
-        const name = (typeof options.name === 'string') ? options.name.replace(/\.[^/.]+$/, '') : Path.parse(path).name;
+        const name = Path.parse(path).name;
 
 
-        fs.writeFile(`${name}.json`, JSON.stringify(result, null, 4), (err) => {
+        writeFile(`${name}.json`, JSON.stringify(result, null, 4), (err) => {
 
           if (err) {
-            return console.log('err', err);
+            return console.log(chalk.bold.red(`❌  ${err}`));
           }
 
+          console.log(chalk.bold.green(`✓ ${name}.json created`));
           process.exit();
 
         });
