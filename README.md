@@ -4,8 +4,8 @@ Command to parse sketch file to json.
 
 ```npm install stoj -g```
 
-```stoj parse [path of your sketch file] -n [name of file will be create]```
+```stoj [file path]```
 
 **Example**
 
-```stoj parse myAwesomeApp/ios.sketch -n ios```
+```stoj myFile.sketch ```
