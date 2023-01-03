@@ -1,0 +1,12 @@
+{
+  "repository": "@specifyapp/Maud",
+  "head": "specify",
+  "base": "master",
+  "rules": [
+    {
+      "name": "Extract all tokens to JSON",
+      "path": "./output/all-tokens.json",
+      "parsers": []
+    }
+  ]
+}
